@@ -9,6 +9,15 @@
   float:left;
 }
 
+.modal-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 li a {
   border: 2px solid #dedede;
   border-radius: 4%;
@@ -65,6 +74,7 @@ li a {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 3%;
     width: 30%;
 }
 
@@ -154,9 +164,8 @@ p { display: block; font-size: 1.35em; line-height: 1.1em; margin-bottom: 15px; 
 /* page structure */
 #wrapper {
   display: block;
-  width: 1300px;
   min-width: 300px;
-  margin-left:12%;
+  margin-left:14%;
 
   margin-top: 45px;
 }
@@ -164,10 +173,8 @@ p { display: block; font-size: 1.35em; line-height: 1.1em; margin-bottom: 15px; 
 #content {
   display: block;
   background:#fcfcfc;
-  margin: 0 20px;
-  padding-left: 20px;
-  width:1300px;
-  margin-bottom: 30px;
+  margin: 20px;
+  max-width:80%;
   -webkit-box-shadow: 1px 3px 8px 0 rgba(38,38,38,0.6);
   -moz-box-shadow: 1px 3px 8px 0 rgba(38,38,38,0.6);
   box-shadow: 1px 3px 8px 0 rgba(38,38,38,0.6);
@@ -195,6 +202,7 @@ p { display: block; font-size: 1.35em; line-height: 1.1em; margin-bottom: 15px; 
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 25px;
+
   opacity: 0.75;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
@@ -233,6 +241,6 @@ p { display: block; font-size: 1.35em; line-height: 1.1em; margin-bottom: 15px; 
 .clearfix:after { clear: both; }
 
 .clearfix {
-  zoom: 1;
-
-} /* IE 6/7 */
+  padding-left: 20px;
+  padding-right: 20px;
+}
