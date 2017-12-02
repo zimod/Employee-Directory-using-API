@@ -13,7 +13,11 @@ const getEmployees = (item)=>{//call back function
   $.each(employee_results,function(index, employee){
     employeesHTML += '<li><a href = "' + employee.picture.large + '" rel="lightbox">';
     employeesHTML += '<img src = "' + employee.picture.large + '">';
-    employeesHTML += '</a></li>';
+    employeesHTML += '<ul class = "info">';
+    employeesHTML += '<li class = "emp_name">' + employee.name.first + '</li>';
+    employeesHTML += '<li class = "emp_email">' + employee.email + '</li>';
+    employeesHTML += '<li class = "emp_city">' + employee.location.city + '</li>';
+    employeesHTML += '</ul></a></li>';
   });//end $.each
     employeesHTML += '</ul>'//close ul tag
   //inject HTML
