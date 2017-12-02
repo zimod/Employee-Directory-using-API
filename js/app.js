@@ -23,17 +23,7 @@ const getEmployees = (item)=>{//call back function
   //inject HTML
   $('.photos').html(employeesHTML);
 
-  //this will apply the lightbox effect to our employee entry
-  $(function(){
-    $('a[rel=lightbox]').lightBox({
-      containerResizeSpeed: 250,
-      fixedNavigation: true
-    });
-    $('a[rel=2ndlightbox]').lightBox({
-      overlayBgColor: '#fff',
-      overlayOpacity: 0.7
-    });
-  });//end
+
 
 };
 $.getJSON(employeeAPI,employeeData,getEmployees);
