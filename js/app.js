@@ -60,6 +60,10 @@ const getEmployees = (item)=>{//call back function
     //console.log(modal_name);
     let modalHTML = '';
     modalHTML += '<span class="close">&times;</span>';//add close span
+    modalHTML += '<br><br>';//add line breaks
+    modalHTML += '<button type="button" class = "previous_btn btn"><</button>';
+    modalHTML += '<button type="button" class = "next_btn btn">></button>';//add buttons
+
     modalHTML += '<img src = "' + modal_img + '" class = "modal-img">';
 
     modalHTML += '<ul class = "modal_list_1">';//ul for list1
@@ -75,11 +79,7 @@ const getEmployees = (item)=>{//call back function
     modalHTML +='</ul>';//close ul for list2
 
     $modal_content.html(modalHTML);//inject the modal HTML
-   // console.log(modalHTML);
-   // console.log(modal_img);
-   // console.log(modal_email);
-   // console.log(modal_name);
-   // console.log(modal_city);
+
 
     $modal.css("display","block");//open up the modal after construction
   });

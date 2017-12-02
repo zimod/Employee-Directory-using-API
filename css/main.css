@@ -86,8 +86,46 @@ li a {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.modal .previous_btn{
+  border-radius: 28px;
+  border: 1px solid white;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #7d8e99;
+  width: 60px;
+  height:40px;
+  text-decoration: none;
+
+  float:left;
+}
+
+.modal .next_btn{
+  border-radius: 28px;
+  border: 1px solid white;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #7d8e99;
+  width: 60px;
+  height:40px;
+  text-decoration: none;
+
+   float:right;
+}
+
+.btn:hover {
+  background: #288a8a;
+  text-decoration: none;
+}
+
+.btn:active{
+  background: #35d61c;
+  text-decoration: none;
+}
 /* Modal Content */
 .modal-content {
+    overflow: auto;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -121,6 +159,7 @@ li a {
 
 /* The Close Button */
 .close {
+
     color: #aaaaaa;
     float: right;
     font-size: 28px;
