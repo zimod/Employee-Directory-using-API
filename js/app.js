@@ -11,7 +11,7 @@ const getEmployees = (item)=>{//call back function
   let employeesHTML = '<ul class="clearfix">';
 
   $.each(employee_results,function(index, employee){
-    employeesHTML += '<li><a href = "' + employee.picture.large + '" rel="lightbox">';
+    employeesHTML += '<li><a href = "#myModal " class = "open_modal">';
     employeesHTML += '<img src = "' + employee.picture.large + '">';
     employeesHTML += '<ul class = "info">';
     employeesHTML += '<li class = "emp_name">' + employee.name.first + '</li>';
@@ -23,7 +23,26 @@ const getEmployees = (item)=>{//call back function
   //inject HTML
   $('.photos').html(employeesHTML);
 
+  // Get the modal
+  let $modal = $('#myModal');
+  // Get the item that opens the modal
+  let $open_modal = $(".open_modal");
+  // Get the <span> element that closes the modal
+  let $span = $(".close");
+  // When the user clicks related employee, open the modal
+  $open_modal.click(function(){
+    $modal.css("display","block");
+  });
+  // When the user clicks on <span> (x), close the modal
+  $span.click(function(){
+    $modal.css("display","none");
+  });
+  //When the user clicks anywhere outside of the modal, close it
+  $('body').click(function(event){//use event.target for current click location
+        if( $(event.target)[0] === $('.modal')[0]){//anywhere outside of the modal
+            $modal.css("display","none");
+        }
+  });
 
-
-};
+};//end getEmployees
 $.getJSON(employeeAPI,employeeData,getEmployees);
