@@ -16,6 +16,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 33px;
 }
 
 li a {
@@ -27,6 +28,10 @@ li a {
   display:inline-block;
 }
 
+.hidden{
+  display:none
+}
+
 .emp_name{
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
@@ -35,6 +40,11 @@ li a {
   margin-top: 38px;
   margin-bottom: 10px;
 }
+
+.modal_list_1 .emp_name{
+  font-size: 2.5em;
+}
+
 
 .emp_email{
   font-family: 'Open Sans', sans-serif;
@@ -45,6 +55,10 @@ li a {
   margin-bottom: 5px;
 }
 
+.modal_list_1 .emp_email{
+  font-size: 1.7em;
+}
+
 .emp_city{
   font-family: 'Open Sans', sans-serif;
   font-size: 1.35em;
@@ -52,6 +66,10 @@ li a {
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.modal_list_1 .emp_city{
+  font-size: 1.85em;
 }
 
 .modal {
@@ -75,8 +93,31 @@ li a {
     padding: 20px;
     border: 1px solid #888;
     border-radius: 3%;
-    width: 30%;
+    width: 20%;
 }
+
+.modal_list_1{
+  width:100%;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: solid #dedede 1px;
+}
+
+
+.modal_list_2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.95em;
+  color: #8a8f93;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.modal_list_2 li{
+  margin-bottom: 20px;
+}
+
 
 /* The Close Button */
 .close {
