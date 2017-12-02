@@ -18,7 +18,7 @@ const getEmployees = (item)=>{//call back function
     employeesHTML += '<ul class = "info">';
     employeesHTML += '<li class = "emp_name">' + employee.name.first + '</li>';
     let emailStr = '';
-    if(employee.email.length >= 30){//too long
+    if(employee.email.length >= 33){//too long
       emailStr += employee.email.substring(0,4);
       emailStr += '...';
     }else{//not too long
@@ -28,7 +28,7 @@ const getEmployees = (item)=>{//call back function
     employeesHTML += '<li class = "emp_city">' + employee.location.city + '</li>';
     //now is the hidden class , these info is for modal use later
     employeesHTML += '<li class = "emp_phone hidden">' + employee.cell + '</li>';
-    employeesHTML +=  '<li class = "emp_addr hidden">' + employee.location.street + '</li>';
+    employeesHTML +=  '<li class = "emp_addr hidden">' + employee.location.street +", " + employee.location.state + ", " + employee.location.postcode + '</li>';
     employeesHTML +=  '<li class = "emp_BDay hidden">'  + "Birthday: "+ employee.dob.substring(0,10) + '</li>';
     //end of hidden
     employeesHTML += '</ul></a></li>'; //finish construct employeesHTML for each li
