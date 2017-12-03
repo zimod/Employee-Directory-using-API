@@ -68,6 +68,10 @@ li a {
   margin-bottom: 5px;
 }
 
+.emp_username{
+  font-size: 1.35em;
+  margin-top: 10px;
+}
 .modal_list_1 .emp_city{
   font-size: 1.85em;
 }

@@ -16,7 +16,7 @@ const getEmployees = (item)=>{//call back function
     employeesHTML += '<li><a href = "#myModal " class = "open_modal" id="' + "employee_"+ index + '">';
     employeesHTML += '<img src = "' + employee.picture.large + '">';
     employeesHTML += '<ul class = "info">';
-    employeesHTML += '<li class = "emp_name" id = "' + "name_" + index + '">' + employee.name.first + '</li>';
+    employeesHTML += '<li class = "emp_name" id = "' + "name_" + index + '">' + employee.name.first + " " + employee.name.last + '</li>';
     let emailStr = '';
     if(employee.email.length >= 33){//too long
       emailStr += employee.email.substring(0,4);
@@ -30,6 +30,7 @@ const getEmployees = (item)=>{//call back function
     employeesHTML += '<li class = "emp_phone hidden">' + employee.cell + '</li>';
     employeesHTML +=  '<li class = "emp_addr hidden">' + employee.location.street +", " + employee.location.state + ", " + employee.location.postcode + '</li>';
     employeesHTML +=  '<li class = "emp_BDay hidden">'  + "Birthday: "+ employee.dob.substring(0,10) + '</li>';
+    employeesHTML += '<li class = "emp_username ">' + "Username: "+ employee.login.username + '</li>';
     //end of hidden
     employeesHTML += '</ul></a></li>'; //finish construct employeesHTML for each li
 
@@ -57,6 +58,7 @@ const getEmployees = (item)=>{//call back function
     let modal_phone = $(this).find(".emp_phone").html();//related employee phone
     let modal_addr = $(this).find(".emp_addr").html();//related employee addr
     let modal_BDay = $(this).find(".emp_BDay").html();//related employee BDay
+    let modal_username = $(this).find(".emp_username").html();//related employee username
 
     let modalHTML = '';
     modalHTML += '<span class="close">&times;</span>';//add close span
@@ -76,6 +78,7 @@ const getEmployees = (item)=>{//call back function
     modalHTML += '<li class = emp_phone>' + modal_phone +'</li>'; //add li phone
     modalHTML += '<li class = emp_addr>' + modal_addr +'</li>'; //add li addr
     modalHTML += '<li class = emp_BDay>' + modal_BDay +'</li>'; //add li BDay
+    modalHTML += '<li class = emp_username>' + modal_username +'</li>'; //add li username
     modalHTML +='</ul>';//close ul for list2
 
     $modal_content.html(modalHTML);//inject the modal HTML

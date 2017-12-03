@@ -2,7 +2,7 @@
 const add_search = ()=>{
    const $search = $(
    `<div class="employee-search">
-     <input placeholder="Search for names...">
+     <input placeholder="Search for names or usernames...">
      <button class = "search-button">Search</button>
    </div>`);
    $search.insertBefore('.photos');
@@ -15,9 +15,9 @@ const searchList = ()=> {
           console.log($input_value);
           $.each($('.open_modal'),function(index,item){
               let $name = $(item).find('.emp_name').html(); //the name for each employee
-            //  console.log($name);
+              let $username = $(item).find('.emp_username').html(); //the username for each employee
               $(item).parent().addClass("hidden"); //hide all entries first
-              if($name.toUpperCase().includes($input_value.toUpperCase())){
+              if($name.toUpperCase().includes($input_value.toUpperCase())||$username.toUpperCase().includes($input_value.toUpperCase())){//we are searching for name and username
                 //show the matched employees
                 $(item).parent().removeClass("hidden");
               }
