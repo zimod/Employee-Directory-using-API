@@ -94,29 +94,19 @@ const getEmployees = (item)=>{//call back function
 
  //logic for previous and next button
   $(document).on("click",".btn",function(){
-    $modal.css("display","none");//close the current modal
+    //$modal.css("display","none");//close the current modal
     let currentIndex = $(this).parent().find(".emp_name").attr("id");//the employee index for current opened modal ep. name_3
-    console.log(currentIndex);
-    let Indexnumber = parseInt(currentIndex.split("_").pop());//get the actual index number
-    let AfterBtnIndex = '';//correct index after pressing ther prev or next button
+    let IndexInList = $('.clearfix').find("#"+currentIndex); // this will relate the modal name to the name in the clearfix class
+    let currentInList = $(IndexInList).parentsUntil(".clearfix")[2];//this is the current employee entry in out clearfix ul
+    let nextInList = $(currentInList).nextAll(':not(".hidden"):first')[0];//this is the FIRST next NON HIDDEN employee entry in our clearfix ul
+    let prevInList = $(currentInList).prevAll(':not(".hidden"):first')[0];//this is the FIRST prev NON HIDDEN employee entry in our clearfix ul
+    console.log(prevInList);
     if($(this).hasClass("previous_btn")){//means the previous button is clicked
-      if(Indexnumber === 0){//cant previous anymore
-        AfterBtnIndex = "name_" + Indexnumber;
-      }else{  //can go previous
-        AfterBtnIndex = "name_" + (Indexnumber-1);
-      }
-      console.log(AfterBtnIndex);
-    }else{//the next button is clicked
-      if(Indexnumber === 11){//cant go next anymore
-        AfterBtnIndex = "name_" + Indexnumber;
-      }else{  //can go next
-        AfterBtnIndex = "name_" + (Indexnumber+1);
-      }
-      console.log(AfterBtnIndex);
+        $(prevInList).find(".open_modal").trigger("click");//open the new modal for prev employee
+    }else{//means the next button is clicked
+        $(nextInList).find(".open_modal").trigger("click");//open the new modal for next employee
     }
-
-   $('.clearfix li').find("#" + AfterBtnIndex).trigger("click");//open the new modal with correct index
-  });
+ });//end on click
 
   //When the user clicks anywhere outside of the modal, close it
   $('body').click(function(event){//use event.target for current click location
